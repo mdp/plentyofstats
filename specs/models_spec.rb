@@ -2,10 +2,29 @@ require 'rubygems'
 require 'spec'
 require 'db'
 
-describe Stats do
+describe Scrape do
+
+  it "should create a scrape" do
+    @scrape = Scrape.new(:description => "test scrape")
+    @scrape.save.should be_true
+  end
   
-  it "should create a record" do
-    p Runs.create(:description => "test").id
+end
+
+describe Stat do
+  
+  before :each do
+    @scrape = Scrape.create(:description => "test scrape")
+  end
+  
+  it "should fail to create a stat without required data" do
+    @stat = @scrape.stats.build(:age => 32)
+    @stat.save.should be_false
+  end
+  
+  it "should fail to create a stat without required data" do
+    @stat = @scrape.stats.build(:age => 32, :zipcode => 12345, :result => 15, :gender => 'm' )
+    @stat.save.should be_true
   end
   
 end
