@@ -1,0 +1,19 @@
+Baseline:
+  attributes:
+    :smoke: 0
+  
+  options: &default
+    :StartAge: 18
+    :EndAge: 65
+    
+Smokers:
+  attributes:
+    :smoke: 3
+  options:  
+    <<:  *default
+    
+Drinkers:
+  attributes:
+    :drink: 3
+  options:  
+    <<:  *default
