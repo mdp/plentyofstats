@@ -5,60 +5,52 @@ require 'hpricot'
 require 'db'
 
 class PlentyOfStats
-  
-  attr_reader :opts
-  
-  def init(options)
-    opts = options
-  end
-  
-  def scrape
-    @scrape = Scrape.create(:description =>  definition)
-    
-    opts = YAML::load(File.open( 'options.yaml' ))[definition]
-    attributes = opts['attributes']
-    (opts['range']['StartAge']..opts['range']['StartAge']).each { |i|
-        doc = Hpricot(get(url(attributes.merge(:minage => i, :maxage => i))))
-        result =  (doc/"/html/body/center/table[3]/tr/td").inner_html
-        result =~ /Results \d+ to \d+ out of (\d+) results are shown below/
-        @scrape.stats.build(:result => result, :age => i, :gender =>  )
-      }
 
-    }
+  attr_reader :opts
+
+  def init(name, options)
+    opts = options
+    @scrape = Scrape.create(:description =>  name)
+  end
+
+  def scrape
+    @opts['locations'].each_value do |l|
+      p "Starting scrape of #{l}"
+      2.times do |s|
+        sex = {:iama => 'm', :seekinga => 'f'} if s == 0
+        sex = {:iama => 'f', :seekinga => 'm'} if s == 1
+        p "\tSearching for #{sex[:seekinga]}"
+        (opts['range']['StartAge']..opts['range']['StartAge']).each do |a|
+          p "\tSS #{sex[:seekinga]}"
+          doc = Hpricot(get(url(attributes.merge(:minage => a, :maxage => a))))
+          result =  (doc/"/html/body/center/table[3]/tr/td").inner_html
+          result =~ /Results \d+ to \d+ out of (\d+) results are shown below/
+          @scrape.stats.build(:result => result, :age => a, :gender => sex[:seekinga] ).save
+        end
+      end
+    end
   end
 
   def opts=(options)
-    @opts = options['attributes'].merge(default_attributes)
+    @opts = default_attributes.merge(options['attributes'])
   end
-  
+
   def url
     attributes = ""
-    opts.each_pair { |k,v|
+    @opts.each_pair { |k,v|
       v ||= ""
       v = v.to_s
       attributes << "#{k}=#{CGI.escape(v)}&"
     }
     base + attributes.chop
   end
-  
-  def get
-    @response
-    open(url, "User-Agent" => "Yahoo",
-    "Referer" => "http://www.google.com/") { |f|
-      puts "Fetched document: #{f.base_uri}"
-      puts "\\t Content Type: #{f.content_type}\\n"
-      puts "\\t Charset: #{f.charset}\\n"
-      puts "\\t Content-Encoding: #{f.content_encoding}\\n"
-      puts "\\t Last Modified: #{f.last_modified}\\n\\n"
 
-      # Save the response body
-      @response = f.read
-    }
-    @response
+  def get
+    open(url, "User-Agent" => "Yahoo", "Referer" => "http://www.google.com/").read
   end
-  
+
   private
-  
+
   def default_attributes
     { :iama => 'm',
       :seekinga => 'f',
@@ -88,4 +80,3 @@ class PlentyOfStats
     }
   end
 end
-

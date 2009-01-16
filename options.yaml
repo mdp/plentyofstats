@@ -1,5 +1,6 @@
-baseline:
-  attributes:&default
+---
+baseline: &default
+  attributes:
     smoke: 0
   range:
     StartAge: 18
@@ -27,6 +28,6 @@ smokers:
     smoke: 3 
     
 drinkers:
-  <<:  *default  
+  <<:  *default
   attributes:
     drink: 3
