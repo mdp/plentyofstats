@@ -22,7 +22,7 @@ describe Stat do
     @stat.save.should be_false
   end
   
-  it "should fail to create a stat without required data" do
+  it "shouldn't fail to create a stat with required data" do
     @stat = @scrape.stats.build(:age => 32, :zipcode => 12345, :result => 15, :gender => 'm' )
     @stat.save.should be_true
   end

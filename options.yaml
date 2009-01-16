@@ -1,19 +1,32 @@
-Baseline:
-  attributes:
-    :smoke: 0
-  
-  options: &default
-    :StartAge: 18
-    :EndAge: 65
+baseline:
+  attributes:&default
+    smoke: 0
+  range:
+    StartAge: 18
+    EndAge: 65
+  locations:
+    NewYork: 10036
+    LosAngeles: 90012
+    Chicago: 60616
+    Dallas: 75215
+    Philadelphia: 19130
+    Houston: 77004
+    Miami: 33130
+    Washington: 20024
+    Atlanta: 30309
+    Boston: 02110
+    Detroit: 48216
+    SanFrancisco: 48216
+    Phoenix: 85003
+    Riverside: 92411
+    Seattle: 98102
     
-Smokers:
+smokers:
+  <<:  *default
   attributes:
-    :smoke: 3
-  options:  
-    <<:  *default
+    smoke: 3 
     
-Drinkers:
+drinkers:
+  <<:  *default  
   attributes:
-    :drink: 3
-  options:  
-    <<:  *default
+    drink: 3
