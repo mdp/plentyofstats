@@ -1,11 +1,11 @@
 ---
 baseline: &default
-  attributes:
-    smoke: 0
-  range:
-    StartAge: 18
-    EndAge: 65
-  locations:
+  :attributes:
+    :smoke: 0
+  :range:
+    :StartAge: 18
+    :EndAge: 65
+  :locations:
     NewYork: 10036
     LosAngeles: 90012
     Chicago: 60616
@@ -24,10 +24,10 @@ baseline: &default
     
 smokers:
   <<:  *default
-  attributes:
-    smoke: 3 
+  :attributes:
+    :smoke: 3 
     
 drinkers:
   <<:  *default
-  attributes:
-    drink: 3
+  :attributes:
+    :drink: 3

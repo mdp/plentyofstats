@@ -4,7 +4,7 @@ require 'dm-types'
 require 'dm-timestamps'
 require 'dm-validations'
 
-DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/db/test.db")
+DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/db/test.sqlite")
 
 class Scrape
   include DataMapper::Resource
