@@ -17,12 +17,11 @@ class PlentyOfStats
   end
 
   def scrape
-    locations.each_value do |l|
-      puts "Starting scrape of #{l}"
-      self.attributes = {:City => l}
+    locations.each_pair do |k, v|
+      puts "Starting scrape of #{k}"
+      self.attributes = {:City => v[:zipcode], :miles => v[:radius]}
       2.times do |s|
-        self.attributes = {:iama => 'm', :seekinga => 'f'} if s == 0
-        self.attributes = {:iama => 'f', :seekinga => 'm'} if s == 1
+        self.attributes = s == 0 ? {:iama => 'm', :seekinga => 'f'} : {:iama => 'f', :seekinga => 'm'}
         puts "\tSearching for #{attributes[:seekinga]}"
         (range[:StartAge]..range[:EndAge]).each do |a|
           self.attributes = {:MinAge => a, :MaxAge => a}
@@ -36,7 +35,9 @@ class PlentyOfStats
             raise Hell
           end
           puts "\tAge #{a} - #{results} results"
-          @scrape.stats.build(:result => results, :age => a, :gender => attributes[:seekinga], :zipcode => attributes[:City] ).save
+          @scrape.stats.build(:result => results, :age => a, :gender => attributes[:seekinga], 
+                              :zipcode => attributes[:City], :radius => attributes[:miles],
+                              :url => url).save
         end
       end
     end
@@ -48,6 +49,10 @@ class PlentyOfStats
 
 
   def fetch
+    open(url, "User-Agent" => "Yahoo", "Referer" => "http://www.google.com/").read
+  end
+  
+  def url
     base = "http://www.plentyoffish.com/advancedsearch.aspx?"
     params = ""
     attributes.each_pair { |k,v|
@@ -55,7 +60,7 @@ class PlentyOfStats
       v = v.to_s
       params << "#{k}=#{CGI.escape(v)}&"
     }
-    open(base + params.chop, "User-Agent" => "Yahoo", "Referer" => "http://www.google.com/").read
+    base + params.chop
   end
 
 

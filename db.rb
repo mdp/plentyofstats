@@ -23,10 +23,12 @@ class Stat
   property :id, Serial
   property :scrape_id, Integer
   property :zipcode, Integer, :nullable => false
+  property :radius, Integer, :nullable => false
   property :age, Integer, :nullable => false
   property :gender, String, :nullable => false
   property :result, String, :nullable => false
-  property :created_on, DateTime  
+  property :url, Text # for debug purposes
+  property :created_at, DateTime  
   
   belongs_to :scrape
   

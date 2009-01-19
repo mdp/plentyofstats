@@ -1,33 +1,65 @@
 ---
 baseline: &default
   :attributes:
-    :smoke: 0
+    :smoke: nil
   :range:
     :StartAge: 18
     :EndAge: 65
   :locations:
-    NewYork: 10036
-    LosAngeles: 90012
-    Chicago: 60616
-    Dallas: 75215
-    Philadelphia: 19130
-    Houston: 77004
-    Miami: 33130
-    Washington: 20024
-    Atlanta: 30309
-    Boston: 02110
-    Detroit: 48216
-    SanFrancisco: 48216
-    Phoenix: 85003
-    Riverside: 92411
-    Seattle: 98102
+    # New York turned out to be way too dense, almost always +700 results, which is where is stops
+    # So we have to baseline with some 
+    # NewYork: 
+    #   :zipcode: 10036
+    #   :radius: 5
+    # LosAngeles: 
+    #   :zipcode: 90012
+    #   :radius: 10
+    Chicago: 
+      :zipcode: 60616
+      :radius: 10
+    Dallas: 
+      :zipcode: 75215
+      :radius: 10
+    Philadelphia: 
+      :zipcode: 19130
+      :radius: 10
+    Houston: 
+      :zipcode: 77004
+      :radius: 10
+    Miami: 
+      :zipcode: 33130
+      :radius: 10
+    Washington: 
+      :zipcode: 20024
+      :radius: 10
+    Atlanta: 
+      :zipcode: 30309
+      :radius: 10
+    Boston: 
+      :zipcode: '02110'
+      :radius: 10
+    Detroit: 
+      :zipcode: 48226
+      :radius: 10
+    SanFrancisco: 
+      :zipcode: 94102
+      :radius: 10
+    Phoenix: 
+      :zipcode: 85003
+      :radius: 10
+    Riverside: 
+      :zipcode: 92411
+      :radius: 25
+    Seattle: 
+      :zipcode: 98102
+      :radius: 10
     
 smokers:
   <<:  *default
   :attributes:
-    :smoke: 3 
+    :smoke: 2
     
 drinkers:
   <<:  *default
   :attributes:
-    :drink: 3
+    :drink: 2
