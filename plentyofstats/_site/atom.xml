@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tom Preston-Werner</title>
+ <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
+ <link href="http://tom.preston-werner.com/"/>
+ <updated>2009-01-20T17:21:22-05:00</updated>
+ <id>http://tom.preston-werner.com/</id>
+ <author>
+   <name>Tom Preston-Werner</name>
+   <email>tom@mojombo.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Initial Plenty Of Stats Github Site</title>
+   <link href="http://tom.preston-werner.com/2009/01/19/Plenty-of-Stats-Test-Post.html"/>
+   <updated>2009-01-19T00:00:00-05:00</updated>
+   <id>http://tom.preston-werner.com/2009/01/19/Plenty-of-Stats-Test-Post</id>
+   <content type="html">&lt;h1&gt;Initial Plenty Of Stats Github Site&lt;/h1&gt;
+
+
+	&lt;p class="meta"&gt;19 Jan 2009 &#8211; Atlanta&lt;/p&gt;
+
+
+	&lt;p&gt;This is a test post for Plenty Of Stats&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
