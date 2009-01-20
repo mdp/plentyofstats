@@ -26,7 +26,7 @@ class Stat
   property :radius, Integer, :nullable => false
   property :age, Integer, :nullable => false
   property :gender, String, :nullable => false
-  property :result, String, :nullable => false
+  property :result, Integer, :nullable => false
   property :url, Text # for debug purposes
   property :created_at, DateTime  
   
