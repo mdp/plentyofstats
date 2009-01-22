@@ -1,19 +1,23 @@
 ---
-baseline: &default
+base: &default
   :attributes:
     :smoke: nil
   :range:
     :StartAge: 18
     :EndAge: 65
   :locations:
-    # New York turned out to be way too dense, almost always +700 results, which is where is stops
-    # So we have to baseline with some 
-    # NewYork: 
-    #   :zipcode: 10036
-    #   :radius: 5
-    # LosAngeles: 
-    #   :zipcode: 90012
-    #   :radius: 10
+    NewYork: 
+      :zipcode: 10036
+      :radius: 10
+      :attributes:
+        :height: 0
+        :heightb: 999
+    LosAngeles: 
+      :zipcode: 90012
+      :radius: 10
+      :attributes:
+        :height: 0
+        :heightb: 999
     Chicago: 
       :zipcode: 60616
       :radius: 10
@@ -58,8 +62,25 @@ smokers:
   <<:  *default
   :attributes:
     :smoke: 2
+heavy_smokers:
+  <<:  *default
+  :attributes:
+    :smoke: 3
     
 drinkers:
   <<:  *default
   :attributes:
     :drink: 2
+heavy_drinkers:
+  <<:  *default
+  :attributes:
+    :drink: 3
+
+drugs:
+  <<:  *default
+  :attributes:
+    :drink: 2
+heavy_drugs:
+  <<:  *default
+  :attributes:
+    :drink: 3

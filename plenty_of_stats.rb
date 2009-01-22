@@ -13,7 +13,7 @@ class PlentyOfStats
     @attributes = self.default_attributes.merge(options[:attributes])
     @locations= options[:locations]
     @range= options[:range]
-    @scrape = Scrape.create(:description =>  name)
+    @description = name
   end
 
   def scrape
@@ -25,6 +25,7 @@ class PlentyOfStats
         puts "\tSearching for #{attributes[:seekinga]}"
         (range[:StartAge]..range[:EndAge]).each do |a|
           self.attributes = {:MinAge => a, :MaxAge => a}
+          self.attributes = v[:attributes] #grab a local city's overriding attributes
           doc = Hpricot(self.fetch)
           results =  (doc/"/html/body/center/table[3]/tr/td").inner_html
           if results.match(/Results \d+ to \d+ out of (\d+) results are shown below/)
@@ -34,17 +35,17 @@ class PlentyOfStats
           else
             raise Hell
           end
-          puts "\tAge #{a} - #{results} results"
-          @scrape.stats.build(:result => results, :age => a, :gender => attributes[:seekinga], 
+          puts "#{attributes[:City]}\tAge #{a} - #{results} results, #{@description}"
+          Stat.create(:result => results, :age => a, :gender => attributes[:seekinga], 
                               :zipcode => attributes[:City], :radius => attributes[:miles],
-                              :url => url).save
+                              :url => url, :scrape => @description)
         end
       end
     end
   end
   
   def attributes=(options)
-    @attributes = @attributes.merge(options)
+    @attributes = @attributes.merge(options) if options
   end
 
 
