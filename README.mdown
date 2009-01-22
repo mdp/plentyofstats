@@ -32,8 +32,8 @@ Using the top 15
 8. 	  Washington: 20024
 9. 	  Atlanta: 30309
 10. 	Boston: 02110
-11. 	Detroit: 48216
-12. 	San Francisco: 48216
+11. 	Detroit: 48226
+12. 	San Francisco: 94102
 13. 	Phoenix: 85003
 14. 	Riverside: 92411
 15. 	Seattle: 98102
