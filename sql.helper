@@ -1,0 +1,5 @@
+Select age, sum(result) / (Select MAX((SELECT SUM(result) FROM stats GROUP BY age)) FROM stats) FROM stats GROUP BY age;
+Select MAX(result) FROM stats;
+SELECT age, (SUM(result)+0.0) / (SELECT SUM(result) FROM stats WHERE scrape = 'base' And s1.age = age) FROM stats as s1 WHERE scrape = 'drugs' or scrape = 'heavy_drugs' GROUP BY age;
+SELECT zipcode, (SUM(result)+0.0) / (SELECT SUM(result) FROM stats WHERE scrape = 'base' And s1.zipcode = zipcode) FROM stats as s1 WHERE scrape = 'drugs' or scrape = 'heavy_drugs' GROUP BY zipcode;
+SELECT age, SUM(result) as base, (SELECT SUM(result) FROM stats WHERE zipcode = s1.zipcode AND age = s1.age AND (scrape='smokers' OR scrape='heavy_smokers')) as smokers, (SELECT SUM(result) FROM stats WHERE zipcode = s1.zipcode AND age = s1.age AND (scrape='drinkers' OR scrape='heavy_drinkers')) as drinkers, (SELECT SUM(result) FROM stats WHERE zipcode = s1.zipcode AND age = s1.age AND (scrape='drugs' OR scrape='heavy_drugs')) as drugs FROM stats as s1 WHERE zipcode='30309' GROUP BY age;

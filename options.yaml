@@ -79,8 +79,8 @@ heavy_drinkers:
 drugs:
   <<:  *default
   :attributes:
-    :drink: 2
+    :drugs: 2
 heavy_drugs:
   <<:  *default
   :attributes:
-    :drink: 3
+    :drugs: 3
