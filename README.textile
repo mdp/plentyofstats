@@ -1,0 +1,39 @@
+# Plenty of Stats
+
+Use 'thor db:migrate' to create the inital database
+
+## Scraping Plenty of Fish
+
+Initiate PlentyOfStats with a description and an hash of attributes and locations(check sample options.yaml)
+Then call 'scrape'
+
+    require 'plenty_of_stats'
+    
+    pos = PlentyOfStats.new('Initial Baseline Scrape', YAML::load(File.open( 'options.yaml' ))['baseline'])
+    pos.scrape
+
+## Cities to scrape
+
+I decided to start with the top 15 cities in the US based on the metro areas. Depending on the density I test for different
+radii in order to keep results as large as possible but below the 600+ cutoff for results.
+
+Top 25 Cities  
+[http://en.wikipedia.org/wiki/Metropolitan_Statistical_Area#Top_25](http://en.wikipedia.org/wiki/Metropolitan_Statistical_Area#Top_25)
+
+Using the top 15
+
+1. 	  New York: 10036
+2. 	  Los Angeles: 90012
+3. 	  Chicago: 60616
+4. 	  Dallas: 75215
+5. 	  Philadelphia: 19130
+6. 	  Houston: 77004
+7. 	  Miami: 33130
+8. 	  Washington: 20024
+9. 	  Atlanta: 30309
+10. 	Boston: 02110
+11. 	Detroit: 48226
+12. 	San Francisco: 94102
+13. 	Phoenix: 85003
+14. 	Riverside: 92411
+15. 	Seattle: 98102
