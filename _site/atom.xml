@@ -4,41 +4,13 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2009-01-20T17:26:39-05:00</updated>
+ <updated>2009-01-28T08:04:05-05:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
- 
- <entry>
-   <title>test of HTML</title>
-   <link href="http://tom.preston-werner.com/2009/01/20/test.html"/>
-   <updated>2009-01-20T00:00:00-05:00</updated>
-   <id>http://tom.preston-werner.com/2009/01/20/test</id>
-   <content type="html">
-&lt;p&gt;“In 90 per cent of the research, the outcome of working in an open-plan office was seen as negative, with open-plan offices causing high levels of stress, conflict, high blood pressure, and a high staff turnover.”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I’m pretty sure the same study came out in 1984 condemming cubicles.&lt;/p&gt;&lt;/description&gt;&lt;link&gt;http://webchicanery.com/post/70274075&lt;/link&gt;&lt;guid&gt;http://webchicanery.com/post/70274075&lt;/guid&gt;&lt;pubDate&gt;Tue, 13 Jan 2009 16:17:03 -0500&lt;/pubDate&gt;&lt;/item&gt;&lt;item&gt;&lt;title&gt;Notice to the "Toilet Seat Pooper"&lt;/title&gt;&lt;description&gt;&lt;p&gt;Unknown Man on Floor 5, Building Two, Concourse Office Park,&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;How?&lt;/b&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Initial Plenty Of Stats Github Site</title>
-   <link href="http://tom.preston-werner.com/2009/01/19/Plenty-of-Stats-Test-Post.html"/>
-   <updated>2009-01-19T00:00:00-05:00</updated>
-   <id>http://tom.preston-werner.com/2009/01/19/Plenty-of-Stats-Test-Post</id>
-   <content type="html">&lt;h1&gt;Initial Plenty Of Stats Github Site&lt;/h1&gt;
-
-
-	&lt;p class="meta"&gt;19 Jan 2009 &#8211; Atlanta&lt;/p&gt;
-
-
-	&lt;p&gt;This is a test post for Plenty Of Stats&lt;/p&gt;</content>
- </entry>
  
  
 </feed>

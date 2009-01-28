@@ -15,22 +15,15 @@
 </head>
 <body>
 
-<div class="site">
+<div id="container">
   <div class="title">
-    <a href="/">{{ page.title }}</a>
+    <h1><a href="/">{{ page.title }}</a></h1>
     <a class="extra" href="/">home</a>
   </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Mark Percival<br />
-        mark@markpercival.us
-      </p>
-    </div>
+  <div class='content'>
+    {{ content }}
   </div>
+  
 </div>
 
 </body>

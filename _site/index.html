@@ -15,34 +15,66 @@
 </head>
 <body>
 
-<div class="site">
+<div id="container">
   <div class="title">
-    <a href="/">Plenty Of Stats</a>
+    <h1><a href="/">Plenty Of Stats</a></h1>
     <a class="extra" href="/">home</a>
   </div>
-  
-  
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+  <div class='content'>
     
-      <li><span>20 Jan 2009</span> &raquo; <a href="/2009/01/20/test.html">test of HTML</a></li>
-    
-      <li><span>19 Jan 2009</span> &raquo; <a href="/2009/01/19/Plenty-of-Stats-Test-Post.html">Initial Plenty Of Stats Github Site</a></li>
-    
+<div id='content'>
+  <h2>About the Project</h2>
+  <p>
+    Plenty of Stats is a project to scrape the popular internet dating site Plenty of Fish.
+    Using the 'number of results' Plenty of Fish provides on each search request, it's possible
+    to build a list of ages with their matching results.
+  </p>
+  <p>
+    I started with a base search, no attributes, just the number of Plenty of Fish users for each gender, each age 18 to 65,
+    in each of the top 15 cities(according to Wikipedia).
+    After building the base results, I scraped for drinking, smoking, and drug use.
+  </p>
+  <p>Below I'll highlight some '</p>
+  <h2>Notable Observations</h2>
+  <ul>
+    <li>Holy shit, that's a lot of dudes!</li>
+    <li>Chicago wants to know if it can bum a cigarette</li>
+    <li>Oh and can you hold it's beer while it lights up?</li>
   </ul>
+  <h2>Where to move</h2>
+  <img src='/images/sexdrugsrocknroll.png' width='600'/>
+
+  <h2>Gender Ratio</h2>
+  <img src='/images/gender_usage.png' width='600' />
+  <img src='/images/percent_male.png' width='600'/>
+
+  <h2>Where not to move</h2>
+  <img src='/images/city_gender.png' width='600' />
+  
+  <h2>The Data</h2>
+  <p>Feel free to run the data through your own report and see what you get.
+    You can pick up the data, in CSV and SQLite format on the projects github repo.
+    I should note, I can't figure out what's up with the drinking in Chitown, LA, NYC, and DC.
+    I've checked the numbers by hand and what can I say. Those fuckers can drink!
+  </p>
+  
+  <h2>Additional Info</h2>
+  <p>I'm running London tonight. Word on the street is they can give Chicago a run for it's money</p>
+  
+  <h2>Author</h2>
+  <p>
+  <ul>
+    <li>Mark Percival</li>
+    <li>mark@mpercival.com</li>
+    <li>markpercival on twitter</li>
+    <li>http://markpercival.us</li>
+  </ul>
+  </p>
 
 </div>
   
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Mark Percival<br />
-        mark@markpercival.us
-      </p>
-    </div>
   </div>
+  
 </div>
 
 </body>
