@@ -1,6 +1,6 @@
 body {
 	margin-top: 0em;
-	background: url('images/background.png');
+	background: url('../images/background.png');
   font-family: "helvetica"; 
 	color: #ffffff;
 }
