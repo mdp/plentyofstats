@@ -11,7 +11,7 @@ class Stat
   
   property :id, Serial
   property :scrape, String, :nullable => false
-  property :zipcode, Integer, :nullable => false
+  property :location, String, :nullable => false
   property :radius, Integer, :nullable => false
   property :age, Integer, :nullable => false
   property :gender, String, :nullable => false

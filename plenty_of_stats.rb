@@ -19,7 +19,7 @@ class PlentyOfStats
   def scrape
     locations.each_pair do |k, v|
       puts "Starting scrape of #{k}"
-      self.attributes = {:City => v[:zipcode], :miles => v[:radius]}
+      self.attributes = {:City => v[:city], :miles => v[:radius]}
       2.times do |s|
         self.attributes = s == 0 ? {:iama => 'm', :seekinga => 'f'} : {:iama => 'f', :seekinga => 'm'}
         puts "\tSearching for #{attributes[:seekinga]}"
@@ -37,7 +37,7 @@ class PlentyOfStats
           end
           puts "#{attributes[:City]}\tAge #{a} - #{results} results, #{@description}"
           Stat.create(:result => results, :age => a, :gender => attributes[:seekinga], 
-                              :zipcode => attributes[:City], :radius => attributes[:miles],
+                              :location => attributes[:City], :radius => attributes[:miles],
                               :url => url, :scrape => @description)
         end
       end
@@ -64,7 +64,6 @@ class PlentyOfStats
     base + params.chop
   end
 
-
   def default_attributes
     { :iama => 'm',
       :seekinga => 'f',
@@ -72,7 +71,7 @@ class PlentyOfStats
       :MinAge => 18,
       :MaxAge => 19,
       :smoke => nil,
-      :country => 1,
+      :country => 92,
       :drugs => nil,
       :City => 30309,
       :miles => 5,

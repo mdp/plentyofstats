@@ -6,58 +6,13 @@ base: &default
     :StartAge: 18
     :EndAge: 65
   :locations:
-    NewYork: 
-      :zipcode: 10036
+    London: 
+      :country: 92
+      :city: 'London'
       :radius: 10
       :attributes:
-        :height: 0
-        :heightb: 999
-    LosAngeles: 
-      :zipcode: 90012
-      :radius: 10
-      :attributes:
-        :height: 0
-        :heightb: 999
-    Chicago: 
-      :zipcode: 60616
-      :radius: 10
-    Dallas: 
-      :zipcode: 75215
-      :radius: 10
-    Philadelphia: 
-      :zipcode: 19130
-      :radius: 10
-    Houston: 
-      :zipcode: 77004
-      :radius: 10
-    Miami: 
-      :zipcode: 33130
-      :radius: 10
-    Washington: 
-      :zipcode: 20024
-      :radius: 10
-    Atlanta: 
-      :zipcode: 30309
-      :radius: 10
-    Boston: 
-      :zipcode: '02110'
-      :radius: 10
-    Detroit: 
-      :zipcode: 48226
-      :radius: 10
-    SanFrancisco: 
-      :zipcode: 94102
-      :radius: 10
-    Phoenix: 
-      :zipcode: 85003
-      :radius: 10
-    Riverside: 
-      :zipcode: 92411
-      :radius: 25
-    Seattle: 
-      :zipcode: 98102
-      :radius: 10
-    
+        :body: 3
+        
 smokers:
   <<:  *default
   :attributes:
