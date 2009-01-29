@@ -6,13 +6,64 @@ base: &default
     :StartAge: 18
     :EndAge: 65
   :locations:
-    London: 
+    NewYork: 
+      :city: 10036
+      :radius: 10
+      :attributes:
+        :height: 0
+        :heightb: 999
+    LosAngeles: 
+      :city: 90012
+      :radius: 10
+      :attributes:
+        :height: 0
+        :heightb: 999
+    Chicago: 
+      :city: 60616
+      :radius: 10
+    Dallas: 
+      :city: 75215
+      :radius: 10
+    Philadelphia: 
+      :city: 19130
+      :radius: 10
+    Houston: 
+      :city: 77004
+      :radius: 10
+    Miami: 
+      :city: 33130
+      :radius: 10
+    Washington: 
+      :city: 20024
+      :radius: 10
+    Atlanta: 
+      :city: 30309
+      :radius: 10
+    Boston: 
+      :city: '02110'
+      :radius: 10
+    Detroit: 
+      :city: 48226
+      :radius: 10
+    SanFrancisco: 
+      :city: 94102
+      :radius: 10
+    Phoenix: 
+      :city: 85003
+      :radius: 10
+    Riverside: 
+      :city: 92411
+      :radius: 25
+    Seattle: 
+      :city: 98102
+      :radius: 10
+    London:
       :country: 92
       :city: 'London'
       :radius: 10
       :attributes:
         :body: 3
-        
+    
 smokers:
   <<:  *default
   :attributes:
