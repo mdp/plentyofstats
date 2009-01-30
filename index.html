@@ -6,46 +6,76 @@ title: Plenty Of Stats
 <div id='content'>
   <h2>About the Project</h2>
   <p>
-    Plenty of Stats is a project to scrape the popular internet dating site Plenty of Fish.
+    Plenty of Stats is a project to scrape the popular internet dating site <a href='http://plentyoffish.com'>Plenty of Fish</a>
+    using Ruby and why's <a href='http://github.com/why/hpricot'>Hpricot library</a>.
+  </p>
+  <p>  
     Using the 'number of results' Plenty of Fish provides on each search request, it's possible
-    to build a list of ages with their matching results.
+    to query each age and sex and build a list of results by age and city.
   </p>
   <p>
-    I started with a base search, no attributes, just the number of Plenty of Fish users for each gender, each age 18 to 65,
-    in each of the top 15 cities(according to Wikipedia).
-    After building the base results, I scraped for drinking, smoking, and drug use.
+    I started with a base search, no user attributes, to get the number of Plenty of Fish users for each gender and age 18 to 65,
+    in each of the top 15 cities(<a href='http://en.wikipedia.org/wiki/United_States_metropolitan_area#Top_25'>according to Wikipedia</a>).
+    After building the base results, I scraped for drinking, smoking, and drug use(combining 'social' and 'heavy' use).
   </p>
-  <p>Below I'll highlight some '</p>
   <h2>Notable Observations</h2>
   <ul>
     <li>Holy shit, that's a lot of dudes!</li>
     <li>Chicago wants to know if it can bum a cigarette</li>
-    <li>Oh and can you hold it's beer while it lights up?</li>
+    <li>Oh and can you hold DC's beer while it gives Chicago a light?</li>
   </ul>
-  <h2>Where to move</h2>
-  <img src='images/sexdrugsrocknroll.png' width='600'/>
+  
+  <h2>Top Cities for...</h2>
+  <ul>
+    <li>Drinking: Washington D.C. - 40.72%</li>
+    <li>Smoking: Chicago - 9.6%</li>
+    <li>Drugs: Los Angeles - 1.24%</li>
+  </ul>
 
   <h2>Gender Ratio</h2>
   <img src='images/gender_usage.png' width='600' />
   <img src='images/percent_male.png' width='600'/>
+  <p>I guess this is to be expected, but still a little depressing. But don't worry, the tables seem to turn at 64.</p>
 
   <h2>Where not to move</h2>
   <img src='images/city_gender.png' width='600' />
+  <p>Ladies, meet San Francisco</p>
   
-  <h2>The Data</h2>
+  <h2>Smoking, Drinking and Drugs</h2>
+  <img src='images/sexdrugsrocknroll.png' width='600'/>
+  <p>Proof that politics lead to drinking</p>
+  
+  <h2>US vs City of London</h2>
+  <img src='images/us_avg.png' width='600' />
+  <img src='images/uk_avg.png' width='600'/>
+  <p>And the total average breakdown</p>
+  <ul>
+    <li>Drinking: 83.15%</li>
+    <li>Smoking: 24.43%</li>
+    <li>Drugs: 1.22%</li>
+  </ul>
+  <p>Top marks on drinking and smoking, only to be beaten by LA in the drug department by .02%. Maybe next year.</p>
+
+  <h2>The Data, and Weird Anomalies</h2>
+  <ul>
+    <li><a href='http://github.com/markpercival/plentyofstats'>Download the data and the Ruby code used to scrape it on github</a></li>
+  </ul>
   <p>Feel free to run the data through your own report and see what you get.
-    You can pick up the data, in CSV and SQLite format on the projects github repo.
-    I should note, I can't figure out what's up with the drinking in Chitown, LA, NYC, and DC.
-    I've checked the numbers by hand and what can I say. Those fuckers can drink!
+    You can pick up the data, in CSV and SQLite format in the github repo above.</p>
+  <p>
+    Obviously this data is purely for entertainment, as I had to massage some of the city data to get
+    it under the 700 result limit imposed by Plenty of Fish. In the case of LA and NY, I only queried users
+    which had chosen to list their height. And in London, I picked users with average body types.
+    I can't figure out what's up with the drinking in Chitown, LA, NYC, and DC.
+    I've checked the numbers by hand and confirmed the numbers. 
   </p>
   
-  <h2>Additional Info</h2>
-  <p>I'm running London tonight. Word on the street is they can give Chicago a run for it's money</p>
+  <p>And of course at the 55+ range the data is bollocks, since the number of users in that age range are few and far between.</p>
   
   <h2>Author</h2>
   <p>
   <ul>
-    <li>Mark Percival</li>
+    <li><a href='http://markpercival.us'>Mark Percival</a></li>
     <li><a href="mailto:mark@markpercival.us">mark@markpercival.us</a></li>
     <li><a href='http://twitter.com/markpercival'>markpercival</a> on twitter</li>
     <li><a href='http://markpercival.us'>http://markpercival.us</a></li>

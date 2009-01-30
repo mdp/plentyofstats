@@ -1,6 +1,6 @@
 body {
 	margin-top: 0em;
-	background: url('/images/background.png');
+	background: url('../images/background.png');
   font-family: "helvetica"; 
 	color: #ffffff;
 }
@@ -12,7 +12,7 @@ body {
   background:#222222;
   padding:0.5em 3em;
 }
-h1 { font-size: 3.8em; color: #A8A800; margin-bottom: 3px; }
+h1 { font-size: 3.8em; color: #DDB200; margin-bottom: 3px; }
 h1 .small { font-size: 0.4em; }
 h1 a { text-decoration: none }
 h2 { font-size: 1.5em; color: #F75611; }
